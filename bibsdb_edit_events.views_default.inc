@@ -76,7 +76,7 @@ function bibsdb_edit_events_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<ul class="action-links">
 <li>
-<a href="http://betabib.sonderborg.dk/#overlay=node/add/ding-event">Opret arrangement</a>
+<a href="/node/add/ding-event">Opret arrangement</a>
 </li>
 </ul>';
   $handler->display->display_options['header']['area']['format'] = 'html';
@@ -123,6 +123,50 @@ function bibsdb_edit_events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'ding_event' => 'ding_event',
   );
+  /* Filter criterion: Content: Date - end date (field_ding_event_date:value2) */
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['id'] = 'field_ding_event_date_value2';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['table'] = 'field_data_field_ding_event_date';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['field'] = 'field_ding_event_date_value2';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['operator'] = '>';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['expose']['operator_id'] = 'field_ding_event_date_value2_op';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['expose']['label'] = 'Vis kun arrangementer efter';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['expose']['operator'] = 'field_ding_event_date_value2_op';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['expose']['identifier'] = 'field_ding_event_date_value2';
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_ding_event_date_value2']['default_date'] = 'now - 1 day';
+  /* Filter criterion: Content: Category (field_ding_event_category) */
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['id'] = 'field_ding_event_category_tid';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['table'] = 'field_data_field_ding_event_category';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['field'] = 'field_ding_event_category_tid';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['expose']['operator_id'] = 'field_ding_event_category_tid_op';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['expose']['label'] = 'Vælg kategori';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['expose']['operator'] = 'field_ding_event_category_tid_op';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['expose']['identifier'] = 'field_ding_event_category_tid';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+  );
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_ding_event_category_tid']['vocabulary'] = 'event_category';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -150,7 +194,7 @@ function bibsdb_edit_events_views_default_views() {
     t('Create event'),
     t('<ul class="action-links">
 <li>
-<a href="http://betabib.sonderborg.dk/#overlay=node/add/ding-event">Opret arrangement</a>
+<a href="/node/add/ding-event">Opret arrangement</a>
 </li>
 </ul>'),
     t('Date'),
@@ -158,6 +202,8 @@ function bibsdb_edit_events_views_default_views() {
     t('Category'),
     t('Published'),
     t('Edit link'),
+    t('Vis kun arrangementer efter'),
+    t('Vælg kategori'),
     t('Page'),
   );
   $export['bibsdb_edit_events_view'] = $view;

@@ -126,7 +126,7 @@ function bibsdb_edit_events_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/content/bibsdb-edit-events';
+  $handler->display->display_options['path'] = 'admin/bibsdb-edit-events';
   $handler->display->display_options['menu']['title'] = 'Arrangementer';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;

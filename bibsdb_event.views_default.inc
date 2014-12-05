@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * bibsdb_edit_events.views_default.inc
+ * bibsdb_event.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function bibsdb_edit_events_views_default_views() {
+function bibsdb_event_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'bibsdb_edit_events_view';
+  $view->name = 'bibsdb_event_view';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -175,7 +175,7 @@ function bibsdb_edit_events_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $translatables['bibsdb_edit_events_view'] = array(
+  $translatables['bibsdb_event_view'] = array(
     t('Master'),
     t('Arrangementer'),
     t('more'),
@@ -206,7 +206,7 @@ function bibsdb_edit_events_views_default_views() {
     t('Vælg kategori'),
     t('Page'),
   );
-  $export['bibsdb_edit_events_view'] = $view;
+  $export['bibsdb_event_view'] = $view;
 
   return $export;
 }

@@ -4,4 +4,4 @@
  * Code for the Bibsdb Edit Events feature.
  */
 
-include_once 'bibsdb_edit_events.features.inc';
+include_once 'bibsdb_event.features.inc';

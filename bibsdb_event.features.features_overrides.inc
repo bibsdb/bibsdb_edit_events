@@ -21,7 +21,7 @@ function bibsdb_event_features_override_default_overrides() {
   $overrides["field_instance.node-ding_event-field_ding_event_list_image.display|search_result|settings|styles|style_2"] = 'ding_list_small';
 
   // Exported overrides for: variable
-  $overrides["variable.node_options_ding_event.value|0"]["DELETED"] = TRUE;
+  $overrides["variable.node_options_ding_event.value|0"] = 'promote';
 
  return $overrides;
 }

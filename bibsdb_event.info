@@ -1,9 +1,11 @@
 name = Bibsdb Event
 core = 7.x
 package = Bibsdb
+dependencies[] = ding_event
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[features_override_items][] = variable.node_options_ding_event
 features[features_overrides][] = field_instance.node-ding_event-field_ding_event_list_image.display|search_result|settings|image_link
 features[features_overrides][] = field_instance.node-ding_event-field_ding_event_list_image.display|search_result|settings|styles|breakpoint_1
 features[features_overrides][] = field_instance.node-ding_event-field_ding_event_list_image.display|search_result|settings|styles|breakpoint_2

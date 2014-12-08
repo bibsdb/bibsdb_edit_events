@@ -31,6 +31,6 @@ function bibsdb_event_field_default_field_instances_alter(&$data) {
  */
 function bibsdb_event_strongarm_alter(&$data) {
   if (isset($data['node_options_ding_event'])) {
-    unset($data['node_options_ding_event']->value[0]);
+    $data['node_options_ding_event']->value[0] = 'promote'; /* WAS: 'status' */
   }
 }

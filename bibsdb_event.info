@@ -4,6 +4,7 @@ package = Bibsdb
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[features_overrides][] = variable.node_options_ding_event.value|0
 features[views_view][] = bibsdb_event_view
 features_exclude[dependencies][ctools] = ctools
 project path = sites/default/modules

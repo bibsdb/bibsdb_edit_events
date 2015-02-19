@@ -5,15 +5,3 @@
  */
 
 include_once 'bibsdb_event.features.inc';
-
-/**
- * Disable caching of Event-nodes, so that events with sales-periods
- * are made available for sale at the correct time.
- */
-function bibsdb_event_init() {    
-  // Get the current active node object if present.
-  $node = menu_get_object();
-  if (!empty($node) && !empty($node->type) && $node->type == 'ding_event') {
-    drupal_page_is_cacheable(FALSE);
-  }
-}

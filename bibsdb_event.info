@@ -10,5 +10,5 @@ features[features_api][] = api:2
 features[rules_config][] = rules_redirect_unpublished_events
 features[views_view][] = bibsdb_event_view
 features_exclude[dependencies][ctools] = ctools
-mtime = 1463045120
+mtime = 1482316927
 project path = sites/default/modules

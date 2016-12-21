@@ -15,16 +15,7 @@ function bibsdb_event_default_rules_configuration() {
       "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
       "ON" : { "node_view--ding_event" : { "bundle" : "ding_event" } },
-      "IF" : [
-        { "NOT user_has_role" : {
-            "account" : [ "site:current-user" ],
-            "roles" : { "value" : { "3" : "3", "4" : "4", "5" : "5", "6" : "6", "7" : "7", "9" : "9" } },
-            "operation" : "OR"
-          }
-        },
-        { "AND" : [] },
-        { "NOT node_is_published" : { "node" : [ "node" ] } }
-      ],
+      "IF" : [ { "NOT node_is_published" : { "node" : [ "node" ] } } ],
       "DO" : [ { "redirect" : { "url" : "arrangementer" } } ]
     }
   }');

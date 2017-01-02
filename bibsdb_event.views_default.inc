@@ -24,25 +24,12 @@ function bibsdb_event_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Arrangementer';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '30';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
@@ -97,7 +84,6 @@ function bibsdb_event_views_default_views() {
   $handler->display->display_options['fields']['field_ding_event_date']['id'] = 'field_ding_event_date';
   $handler->display->display_options['fields']['field_ding_event_date']['table'] = 'field_data_field_ding_event_date';
   $handler->display->display_options['fields']['field_ding_event_date']['field'] = 'field_ding_event_date';
-  $handler->display->display_options['fields']['field_ding_event_date']['label'] = 'Dato';
   $handler->display->display_options['fields']['field_ding_event_date']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'both',
@@ -109,13 +95,13 @@ function bibsdb_event_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Titel';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Field: Library */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Bibliotek';
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 0,
   );
@@ -124,7 +110,6 @@ function bibsdb_event_views_default_views() {
   $handler->display->display_options['fields']['field_ding_event_category']['id'] = 'field_ding_event_category';
   $handler->display->display_options['fields']['field_ding_event_category']['table'] = 'field_data_field_ding_event_category';
   $handler->display->display_options['fields']['field_ding_event_category']['field'] = 'field_ding_event_category';
-  $handler->display->display_options['fields']['field_ding_event_category']['label'] = 'Kategori';
   /* Field: Content: Published */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
@@ -215,34 +200,33 @@ function bibsdb_event_views_default_views() {
   $translatables['bibsdb_event_view'] = array(
     t('Master'),
     t('Arrangementer'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('Antal elementer'),
-    t('- Alle -'),
-    t('Forskydning'),
-    t('« første'),
-    t('‹ forrige'),
-    t('næste ›'),
-    t('sidste »'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
     t('Create event'),
     t('<ul class="action-links">
 <li>
 <a href="/node/add/ding-event">Opret arrangement</a>
 </li>
 </ul>'),
-    t('Dato'),
-    t('Title'),
-    t('Bibliotek'),
-    t('Kategori'),
+    t('Date'),
+    t('Titel'),
+    t('Library'),
+    t('Category'),
     t('Published'),
     t('Vis kun arrangementer efter'),
     t('Vælg kategori'),
     t('Page'),
-    t('more'),
   );
   $export['bibsdb_event_view'] = $view;
 

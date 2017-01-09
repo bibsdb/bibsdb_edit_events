@@ -39,7 +39,7 @@ function bibsdb_event_field_default_field_instances() {
         'rows' => 15,
       ),
       'type' => 'text_textarea',
-      'weight' => 42,
+      'weight' => 43,
     ),
   );
 
@@ -59,7 +59,7 @@ function bibsdb_event_field_default_field_instances() {
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_bibsdb_event_cat_top',
-    'label' => 'bibsdb_event_cat_top',
+    'label' => 'SEO tekst vist øverst på siden',
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
@@ -72,14 +72,14 @@ function bibsdb_event_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 43,
+      'weight' => 42,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('SEO tekst vist nederst på siden');
-  t('bibsdb_event_cat_top');
+  t('SEO tekst vist øverst på siden');
 
   return $field_instances;
 }

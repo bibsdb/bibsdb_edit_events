@@ -112,38 +112,6 @@ taxonomy/term/%term:tid',
     $display->content['new-69e61890-8dde-42c3-b8e4-192813161a0c'] = $pane;
     $display->panels['left_sidebar'][0] = 'new-69e61890-8dde-42c3-b8e4-192813161a0c';
     $pane = new stdClass();
-    $pane->pid = 'new-22c8c66a-8407-4928-a44b-23d08f3a83fe';
-    $pane->panel = 'left_sidebar';
-    $pane->type = 'bibsdb_event_menu';
-    $pane->subtype = 'bibsdb_event_menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'slug' => 'arrangementer',
-      'default_link_text' => 'All terms',
-      'dropdown' => 0,
-      'vocabulary' => 'event_category',
-      'base' => '',
-      'context' => array(
-        0 => 'argument_term_1',
-        1 => 'empty',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '22c8c66a-8407-4928-a44b-23d08f3a83fe';
-    $display->content['new-22c8c66a-8407-4928-a44b-23d08f3a83fe'] = $pane;
-    $display->panels['left_sidebar'][1] = 'new-22c8c66a-8407-4928-a44b-23d08f3a83fe';
-    $pane = new stdClass();
     $pane->pid = 'new-e96436de-1a68-4813-91aa-63662d84d299';
     $pane->panel = 'left_sidebar';
     $pane->type = 'campaign';
@@ -168,11 +136,11 @@ taxonomy/term/%term:tid',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'e96436de-1a68-4813-91aa-63662d84d299';
     $display->content['new-e96436de-1a68-4813-91aa-63662d84d299'] = $pane;
-    $display->panels['left_sidebar'][2] = 'new-e96436de-1a68-4813-91aa-63662d84d299';
+    $display->panels['left_sidebar'][1] = 'new-e96436de-1a68-4813-91aa-63662d84d299';
     $pane = new stdClass();
     $pane->pid = 'new-ee39a7cd-921c-4424-97bf-5ab8d9033c6f';
     $pane->panel = 'main_content';

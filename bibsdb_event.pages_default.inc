@@ -112,6 +112,38 @@ taxonomy/term/%term:tid',
     $display->content['new-69e61890-8dde-42c3-b8e4-192813161a0c'] = $pane;
     $display->panels['left_sidebar'][0] = 'new-69e61890-8dde-42c3-b8e4-192813161a0c';
     $pane = new stdClass();
+    $pane->pid = 'new-22c8c66a-8407-4928-a44b-23d08f3a83fe';
+    $pane->panel = 'left_sidebar';
+    $pane->type = 'bibsdb_event_menu';
+    $pane->subtype = 'bibsdb_event_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'slug' => 'arrangementer',
+      'default_link_text' => 'All terms',
+      'dropdown' => 0,
+      'vocabulary' => 'event_category',
+      'base' => '',
+      'context' => array(
+        0 => 'argument_term_1',
+        1 => 'empty',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '22c8c66a-8407-4928-a44b-23d08f3a83fe';
+    $display->content['new-22c8c66a-8407-4928-a44b-23d08f3a83fe'] = $pane;
+    $display->panels['left_sidebar'][1] = 'new-22c8c66a-8407-4928-a44b-23d08f3a83fe';
+    $pane = new stdClass();
     $pane->pid = 'new-e96436de-1a68-4813-91aa-63662d84d299';
     $pane->panel = 'left_sidebar';
     $pane->type = 'campaign';
@@ -136,11 +168,11 @@ taxonomy/term/%term:tid',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'e96436de-1a68-4813-91aa-63662d84d299';
     $display->content['new-e96436de-1a68-4813-91aa-63662d84d299'] = $pane;
-    $display->panels['left_sidebar'][1] = 'new-e96436de-1a68-4813-91aa-63662d84d299';
+    $display->panels['left_sidebar'][2] = 'new-e96436de-1a68-4813-91aa-63662d84d299';
     $pane = new stdClass();
     $pane->pid = 'new-ee39a7cd-921c-4424-97bf-5ab8d9033c6f';
     $pane->panel = 'main_content';
@@ -163,6 +195,36 @@ taxonomy/term/%term:tid',
     $pane->uuid = 'ee39a7cd-921c-4424-97bf-5ab8d9033c6f';
     $display->content['new-ee39a7cd-921c-4424-97bf-5ab8d9033c6f'] = $pane;
     $display->panels['main_content'][0] = 'new-ee39a7cd-921c-4424-97bf-5ab8d9033c6f';
+    $pane = new stdClass();
+    $pane->pid = 'new-8cbde185-f5d7-4042-8dd7-bf3f7fa82bcf';
+    $pane->panel = 'main_content';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'taxonomy_term:field_bibsdb_event_cat_top';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_term_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '8cbde185-f5d7-4042-8dd7-bf3f7fa82bcf';
+    $display->content['new-8cbde185-f5d7-4042-8dd7-bf3f7fa82bcf'] = $pane;
+    $display->panels['main_content'][1] = 'new-8cbde185-f5d7-4042-8dd7-bf3f7fa82bcf';
     $pane = new stdClass();
     $pane->pid = 'new-182ac438-746a-48a7-b7f2-1a696f14b582';
     $pane->panel = 'main_content';
@@ -187,11 +249,11 @@ taxonomy/term/%term:tid',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '182ac438-746a-48a7-b7f2-1a696f14b582';
     $display->content['new-182ac438-746a-48a7-b7f2-1a696f14b582'] = $pane;
-    $display->panels['main_content'][1] = 'new-182ac438-746a-48a7-b7f2-1a696f14b582';
+    $display->panels['main_content'][2] = 'new-182ac438-746a-48a7-b7f2-1a696f14b582';
     $pane = new stdClass();
     $pane->pid = 'new-3cb95651-0650-42f1-a8bd-e56688d1a4aa';
     $pane->panel = 'main_content';
@@ -212,11 +274,41 @@ taxonomy/term/%term:tid',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '3cb95651-0650-42f1-a8bd-e56688d1a4aa';
     $display->content['new-3cb95651-0650-42f1-a8bd-e56688d1a4aa'] = $pane;
-    $display->panels['main_content'][2] = 'new-3cb95651-0650-42f1-a8bd-e56688d1a4aa';
+    $display->panels['main_content'][3] = 'new-3cb95651-0650-42f1-a8bd-e56688d1a4aa';
+    $pane = new stdClass();
+    $pane->pid = 'new-740de3f1-a957-4329-a3b3-bf6d2720d890';
+    $pane->panel = 'main_content';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'taxonomy_term:field_bibsdb_event_cat_bottom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_term_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '740de3f1-a957-4329-a3b3-bf6d2720d890';
+    $display->content['new-740de3f1-a957-4329-a3b3-bf6d2720d890'] = $pane;
+    $display->panels['main_content'][4] = 'new-740de3f1-a957-4329-a3b3-bf6d2720d890';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

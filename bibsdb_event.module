@@ -7,6 +7,17 @@
 include_once 'bibsdb_event.features.inc';
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ *
+ * It simply tells panels where to find the .inc files that define various
+ * args, contexts, content_types. In this case the subdirectories of
+ * ctools_plugin_example/panels are used.
+ */
+function bibsdb_event_ctools_plugin_directory($owner, $plugin_type) {
+  return 'plugins/' . $plugin_type;
+}
+
+/**
  * Disable caching of Event-nodes, so that events with sales-periods
  * are made available for sale at the correct time.
  */

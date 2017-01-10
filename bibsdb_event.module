@@ -12,8 +12,43 @@ include_once 'bibsdb_event.features.inc';
  */
 function bibsdb_event_init() {    
   // Get the current active node object if present.
-  $node = menu_get_object();
-  if (!empty($node) && !empty($node->type) && $node->type == 'ding_event') {
-    drupal_page_is_cacheable(FALSE);
-  }
+	$node = menu_get_object();
+	if (!empty($node) && !empty($node->type) && $node->type == 'ding_event') {
+		drupal_page_is_cacheable(FALSE);
+	}
+}
+
+/**
+ * Implements hook_cron().
+ * Add (0) to empty event category term names.
+ */
+function bibsdb_event_cron() {
+	// Load event category vocabulary
+	$vocabulary = taxonomy_vocabulary_machine_name_load('event_category');
+	$terms = taxonomy_get_tree($vocabulary->vid, $parent = 0, $max_depth = 1, $load_entities = FALSE);
+
+	// Add (0) to term names with node count=0
+	foreach ($terms as $term) {
+		$wrapper = entity_metadata_wrapper('taxonomy_term', $term->tid);
+		$count = $wrapper->node_count->value();
+		
+		if ($count == 0 AND strpos($term->name, " (0)") == false) {
+			$term->name = $term->name . " (" . $count . ")";
+			taxonomy_term_save($term);
+		}
+	}
+}
+
+/**
+ * Implements hook_node_presave().
+ * Remove (0) from empty event category term if the term is attached on this event.
+ */
+
+function bibsdb_event_node_presave($node) {
+	$wrapper = entity_metadata_wrapper('node', $node);
+	foreach ($wrapper->field_ding_event_category->getIterator() as $delta => $term_wrapper) {
+		$label = $term_wrapper->name->value();
+		$term_wrapper->name = str_replace(" (0)", "", $label);
+		$term_wrapper->save();
+	}
 }

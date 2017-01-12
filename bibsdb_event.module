@@ -45,10 +45,12 @@ function bibsdb_event_cron() {
  */
 
 function bibsdb_event_node_presave($node) {
-	$wrapper = entity_metadata_wrapper('node', $node);
-	foreach ($wrapper->field_ding_event_category->getIterator() as $delta => $term_wrapper) {
-		$label = $term_wrapper->name->value();
-		$term_wrapper->name = str_replace(" (0)", "", $label);
-		$term_wrapper->save();
+	if (!empty($node) && !empty($node->type) && $node->type == 'ding_event') {
+		$wrapper = entity_metadata_wrapper('node', $node);
+		foreach ($wrapper->field_ding_event_category->getIterator() as $delta => $term_wrapper) {
+			$label = $term_wrapper->name->value();
+			$term_wrapper->name = str_replace(" (0)", "", $label);
+			$term_wrapper->save();
+		}
 	}
 }

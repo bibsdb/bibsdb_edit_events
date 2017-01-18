@@ -183,6 +183,30 @@ events
     $display->content['new-d603ce6a-0b1f-4a83-81ac-a9db9c950d31'] = $pane;
     $display->panels['main_content'][1] = 'new-d603ce6a-0b1f-4a83-81ac-a9db9c950d31';
     $pane = new stdClass();
+    $pane->pid = 'new-90ad14d5-21d6-4ac4-867b-2c0d37c25c9d';
+    $pane->panel = 'main_content';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'bibsdb_wall-panel_bibsdb_wall';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_bibsdb_wall_tid' => '178',
+        'field_bibsdb_hosting_node_target_id' => '',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '90ad14d5-21d6-4ac4-867b-2c0d37c25c9d';
+    $display->content['new-90ad14d5-21d6-4ac4-867b-2c0d37c25c9d'] = $pane;
+    $display->panels['main_content'][2] = 'new-90ad14d5-21d6-4ac4-867b-2c0d37c25c9d';
+    $pane = new stdClass();
     $pane->pid = 'new-5d683c57-a79e-4d16-9046-d2dc04a557d5';
     $pane->panel = 'main_content';
     $pane->type = 'views_panes';
@@ -202,11 +226,11 @@ events
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '5d683c57-a79e-4d16-9046-d2dc04a557d5';
     $display->content['new-5d683c57-a79e-4d16-9046-d2dc04a557d5'] = $pane;
-    $display->panels['main_content'][2] = 'new-5d683c57-a79e-4d16-9046-d2dc04a557d5';
+    $display->panels['main_content'][3] = 'new-5d683c57-a79e-4d16-9046-d2dc04a557d5';
     $pane = new stdClass();
     $pane->pid = 'new-fb32e006-e3f2-4f14-a1a2-0513758f77e8';
     $pane->panel = 'right_sidebar';

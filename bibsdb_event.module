@@ -24,16 +24,20 @@ function bibsdb_event_init() {
  */
 function bibsdb_event_cron() {
 	// Load event category vocabulary
+
 	$vocabulary = taxonomy_vocabulary_machine_name_load('event_category');
 	$terms = taxonomy_get_tree($vocabulary->vid, $parent = 0, $max_depth = 1, $load_entities = FALSE);
 
 	// Add (0) to term names with node count=0
 	foreach ($terms as $term) {
-		$wrapper = entity_metadata_wrapper('taxonomy_term', $term->tid);
-		$count = $wrapper->node_count->value();
-		
-		if ($count == 0 AND strpos($term->name, " (0)") == false) {
-			$term->name = $term->name . " (" . $count . ")";
+		$query = new EntityFieldQuery;
+		$query->entityCondition('entity_type', 'node')
+		->fieldCondition('field_ding_event_category', 'tid', $term->tid)
+		->propertyCondition('status', NODE_PUBLISHED);
+	
+		$result = $query->execute();
+		if (!(isset($result['node'])) AND strpos($term->name, " (0)") == false) {
+			$term->name = $term->name . " (0)";
 			taxonomy_term_save($term);
 		}
 	}

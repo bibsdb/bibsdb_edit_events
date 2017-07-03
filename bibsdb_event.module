@@ -17,3 +17,21 @@ function bibsdb_event_init() {
 		drupal_page_is_cacheable(FALSE);
 	}
 }
+
+/**
+ * Implements hook_form_alter()
+ * Add JS to display char count on edit form.
+ */
+function bibsdb_event_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'ding_event_node_form':
+      $form['#after_build'][] = 'bibsdb_event_after_build';
+      break;
+  }
+}
+
+function bibsdb_event_after_build($form, &$form_state) {
+  $module_path = drupal_get_path('module', 'bibsdb_event');
+  drupal_add_js($module_path . '/js/bibsdb_event.js');
+  return $form;
+}

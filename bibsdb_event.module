@@ -51,3 +51,12 @@ function bibsdb_event_form_views_exposed_form_alter(&$form, &$form_state, $form_
     $form['field_ding_event_category_tid']['#options'] = $allowed_terms;
   }
 }
+
+/**
+ * Implements hook_form_alter()
+ * Count chars in lead. More than 255 chars will break Place2book integration
+ */
+
+function bibsdb_event_form_ding_event_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['#attached']['js'][] = drupal_get_path('module', 'bibsdb_event') . '/js/bibsdb_event.js';
+}

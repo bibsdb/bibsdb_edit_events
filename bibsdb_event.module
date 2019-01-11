@@ -20,40 +20,6 @@ function bibsdb_event_init() {
 
 /**
  * Implements hook_form_alter()
- * Hide empty category terms in event view filter.
- */
-
-function bibsdb_event_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-  if ($form['#id'] == 'views-exposed-form-ding-event-ding-event-list') {
-
-    $vocabulary = 'event_category';    
-    $vocab = taxonomy_vocabulary_machine_name_load($vocabulary);
-    $terms = taxonomy_get_tree($vocab->vid);
-    $allowed_terms = array();
-
-    foreach ($terms as $term) {
-      // Filter out empty terms
-      $query = new EntityFieldQuery;
-      $query->entityCondition('entity_type', 'node')
-      ->fieldCondition('field_ding_event_category', 'tid', $term->tid)
-      ->propertyCondition('status', NODE_PUBLISHED);
-      $result = $query->execute();
-      // Skip this term if there are no published nodes attached to it
-      if (!(isset($result['node']))) {
-        continue;
-      }
-
-      $allowed_terms[$term->tid] = $term->name;
-    }
-
-    // Set value to exposed filters.
-    unset($form['field_ding_event_category_tid']['#options']);
-    $form['field_ding_event_category_tid']['#options'] = $allowed_terms;
-  }
-}
-
-/**
- * Implements hook_form_alter()
  * Count chars in lead. More than 255 chars will break Place2book integration
  */
 

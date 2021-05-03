@@ -19,6 +19,57 @@ function bibsdb_event_init() {
 }
 
 /**
+ * Implements hook_cron().
+ *
+ * Unpublish expired events. Necessary for filtering. 
+ * We only want to display event categories containing active events.
+ * On unpublishing create redirect to /arrangementer.
+ */
+function bibsdb_event_cron() {
+  $now = format_date(time(), 'custom', 'Y-m-d H:i:s');
+
+	$query = new EntityFieldQuery();
+
+  // Find event-nodes where end-date is before now
+	$query->entityCondition('entity_type', 'node')
+	->entityCondition('bundle', 'ding_event')
+	->propertyCondition('status', NODE_PUBLISHED)
+	->fieldCondition('field_ding_event_date', 'value2', $now, '<');
+
+	$result = $query->execute();
+
+	if (!empty($result['node'])) {
+		$nids = array_keys($result['node']);
+
+	 // Loop nodes and unpublish
+		foreach ($nids as $nid) {
+			$node = node_load($nid, NULL, TRUE);
+			$node->status = NODE_UNPUBLISHED;
+			node_save($node);
+
+	    // Create redirect
+			$source = 'node/' . $nid;
+			// Check if a redirect exists already. If not - create one.
+			if (!(redirect_load_by_source($source))) {
+				$redirect = new stdClass();
+
+				redirect_object_prepare(
+					$redirect,
+					array(
+						'source' => $source,
+						'source_options' => array(),
+						'redirect' => 'arrangementer',
+						'redirect_options' => array(),
+						'language' => LANGUAGE_NONE,
+						)
+					);
+				redirect_save($redirect);
+			}
+		}
+	}
+}
+
+/**
  * Implements hook_form_alter()
  * Count chars in lead. More than 255 chars will break Place2book integration
  */

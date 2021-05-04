@@ -81,16 +81,14 @@ function bibsdb_event_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Create event';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<ul class="action-links">
-<li>
+  $handler->display->display_options['header']['area']['content'] = '<p>
 <a href="/node/add/ding-event">Opret arrangement</a>
-</li>
-</ul>
-<a href="bibsdb-events-admin-child" class="button">Børn</a>
-<a href="bibsdb-events-admin-adult" class="button">Voksen</a>
-<a href="bibsdb-events-admin" class="button">Alle</a>';
-  $handler->display->display_options['header']['area']['format'] = 'html';
-  /* Field: Indholdselement: Date */
+</p>
+<p>
+<span><a href="bibsdb-events-admin-child" class="button">Børn</a></span><span><a href="bibsdb-events-admin-adult" class="button">Voksen</a></span><span><a href="bibsdb-events-admin" class="button">Alle</a></span>
+</p>';
+  $handler->display->display_options['header']['area']['format'] = 'ding_wysiwyg';
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_ding_event_date']['id'] = 'field_ding_event_date';
   $handler->display->display_options['fields']['field_ding_event_date']['table'] = 'field_data_field_ding_event_date';
   $handler->display->display_options['fields']['field_ding_event_date']['field'] = 'field_ding_event_date';
@@ -117,7 +115,7 @@ function bibsdb_event_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
-  /* Field: Indholdselement: Category */
+  /* Field: Content: Category */
   $handler->display->display_options['fields']['field_ding_event_category']['id'] = 'field_ding_event_category';
   $handler->display->display_options['fields']['field_ding_event_category']['table'] = 'field_data_field_ding_event_category';
   $handler->display->display_options['fields']['field_ding_event_category']['field'] = 'field_ding_event_category';
@@ -180,7 +178,7 @@ function bibsdb_event_views_default_views() {
     'ding_event' => 'ding_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indholdselement: Date - end date (field_ding_event_date:value2) */
+  /* Filter criterion: Content: Date - end date (field_ding_event_date:value2) */
   $handler->display->display_options['filters']['field_ding_event_date_value2']['id'] = 'field_ding_event_date_value2';
   $handler->display->display_options['filters']['field_ding_event_date_value2']['table'] = 'field_data_field_ding_event_date';
   $handler->display->display_options['filters']['field_ding_event_date_value2']['field'] = 'field_ding_event_date_value2';
@@ -203,7 +201,7 @@ function bibsdb_event_views_default_views() {
     9 => 0,
   );
   $handler->display->display_options['filters']['field_ding_event_date_value2']['default_date'] = 'now - 1 day';
-  /* Filter criterion: Indholdselement: Category (field_ding_event_category) */
+  /* Filter criterion: Content: Category (field_ding_event_category) */
   $handler->display->display_options['filters']['field_ding_event_category_tid']['id'] = 'field_ding_event_category_tid';
   $handler->display->display_options['filters']['field_ding_event_category_tid']['table'] = 'field_data_field_ding_event_category';
   $handler->display->display_options['filters']['field_ding_event_category_tid']['field'] = 'field_ding_event_category_tid';
@@ -291,7 +289,7 @@ function bibsdb_event_views_default_views() {
     'ding_event' => 'ding_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indholdselement: Date - end date (field_ding_event_date:value2) */
+  /* Filter criterion: Content: Date - end date (field_ding_event_date:value2) */
   $handler->display->display_options['filters']['field_ding_event_date_value2']['id'] = 'field_ding_event_date_value2';
   $handler->display->display_options['filters']['field_ding_event_date_value2']['table'] = 'field_data_field_ding_event_date';
   $handler->display->display_options['filters']['field_ding_event_date_value2']['field'] = 'field_ding_event_date_value2';
@@ -314,7 +312,7 @@ function bibsdb_event_views_default_views() {
     9 => 0,
   );
   $handler->display->display_options['filters']['field_ding_event_date_value2']['default_date'] = 'now - 1 day';
-  /* Filter criterion: Indholdselement: Category (field_ding_event_category) */
+  /* Filter criterion: Content: Category (field_ding_event_category) */
   $handler->display->display_options['filters']['field_ding_event_category_tid']['id'] = 'field_ding_event_category_tid';
   $handler->display->display_options['filters']['field_ding_event_category_tid']['table'] = 'field_data_field_ding_event_category';
   $handler->display->display_options['filters']['field_ding_event_category_tid']['field'] = 'field_ding_event_category_tid';
@@ -359,7 +357,7 @@ function bibsdb_event_views_default_views() {
     8 => 0,
     9 => 0,
   );
-  /* Filter criterion: Indholdselement: Groups (ding_event_groups_ref) */
+  /* Filter criterion: Content: Groups (ding_event_groups_ref) */
   $handler->display->display_options['filters']['ding_event_groups_ref_target_id']['id'] = 'ding_event_groups_ref_target_id';
   $handler->display->display_options['filters']['ding_event_groups_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['ding_event_groups_ref_target_id']['field'] = 'ding_event_groups_ref_target_id';
@@ -400,7 +398,7 @@ function bibsdb_event_views_default_views() {
     'ding_event' => 'ding_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indholdselement: Date - end date (field_ding_event_date:value2) */
+  /* Filter criterion: Content: Date - end date (field_ding_event_date:value2) */
   $handler->display->display_options['filters']['field_ding_event_date_value2']['id'] = 'field_ding_event_date_value2';
   $handler->display->display_options['filters']['field_ding_event_date_value2']['table'] = 'field_data_field_ding_event_date';
   $handler->display->display_options['filters']['field_ding_event_date_value2']['field'] = 'field_ding_event_date_value2';
@@ -423,7 +421,7 @@ function bibsdb_event_views_default_views() {
     9 => 0,
   );
   $handler->display->display_options['filters']['field_ding_event_date_value2']['default_date'] = 'now - 1 day';
-  /* Filter criterion: Indholdselement: Category (field_ding_event_category) */
+  /* Filter criterion: Content: Category (field_ding_event_category) */
   $handler->display->display_options['filters']['field_ding_event_category_tid']['id'] = 'field_ding_event_category_tid';
   $handler->display->display_options['filters']['field_ding_event_category_tid']['table'] = 'field_data_field_ding_event_category';
   $handler->display->display_options['filters']['field_ding_event_category_tid']['field'] = 'field_ding_event_category_tid';
@@ -468,7 +466,7 @@ function bibsdb_event_views_default_views() {
     8 => 0,
     9 => 0,
   );
-  /* Filter criterion: Indholdselement: Groups (ding_event_groups_ref) */
+  /* Filter criterion: Content: Groups (ding_event_groups_ref) */
   $handler->display->display_options['filters']['ding_event_groups_ref_target_id_1']['id'] = 'ding_event_groups_ref_target_id_1';
   $handler->display->display_options['filters']['ding_event_groups_ref_target_id_1']['table'] = 'og_membership';
   $handler->display->display_options['filters']['ding_event_groups_ref_target_id_1']['field'] = 'ding_event_groups_ref_target_id';
@@ -484,14 +482,12 @@ function bibsdb_event_views_default_views() {
     t('Stigende'),
     t('Faldende'),
     t('Create event'),
-    t('<ul class="action-links">
-<li>
+    t('<p>
 <a href="/node/add/ding-event">Opret arrangement</a>
-</li>
-</ul>
-<a href="bibsdb-events-admin-child" class="button">Børn</a>
-<a href="bibsdb-events-admin-adult" class="button">Voksen</a>
-<a href="bibsdb-events-admin" class="button">Alle</a>'),
+</p>
+<p>
+<span><a href="bibsdb-events-admin-child" class="button">Børn</a></span><span><a href="bibsdb-events-admin-adult" class="button">Voksen</a></span><span><a href="bibsdb-events-admin" class="button">Alle</a></span>
+</p>'),
     t('Dato'),
     t('Title'),
     t('Bibliotek'),
